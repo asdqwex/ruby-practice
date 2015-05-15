@@ -96,4 +96,4 @@ end
 
 puts 'Find the largest palindrome made from the product of two x-digit numbers. Where x is: '+a.to_s
 puts findLargePal(a)
-puts '##########################################################'
+puts '##########################################################' 
