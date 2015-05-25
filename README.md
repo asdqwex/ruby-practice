@@ -1,1 +1,1 @@
-## Iterations of Euler problems in ruby, maybe one day I will be a programmer
+#### Iterations of Euler problems in ruby
