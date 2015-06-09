@@ -7,7 +7,6 @@ primes = []
 
 1.upto(2000000) do |n|
     if n.prime?
-        puts n
         primes.push(n)
     end
 end

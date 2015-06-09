@@ -480,27 +480,29 @@ c4 = 4
 
 sumsArray = []
 
-while l4 != 21 do
-    sum = data[l1.to_s][c1.to_s].to_i*data[l2.to_s][c2.to_s].to_i*data[l3.to_s][c3.to_s].to_i*data[l4.to_s][c4.to_s].to_i
-    sumsArray.push(sum)
-    if c4 == 20
-        l1 += 1
-        l2 += 1
-        l3 += 1
-        l4 += 1
-    end
-    if c4 == 20
-        c1 = 1
-        c2 = 2
-        c3 = 3
-        c4 = 4
-    end
-    if c4 < 20
-        c1 += 1
-        c2 += 1
-        c3 += 1
-        c4 += 1
-    end
+until l4 == 21 do
+  vsum = data[l1.to_s][c1.to_s].to_i*data[l2.to_s][c1.to_s].to_i*data[l3.to_s][c1.to_s].to_i*data[l4.to_s][c1.to_s].to_i
+  sumsArray.push(vsum)
+  hsum = data[l1.to_s][c1.to_s].to_i*data[l1.to_s][c2.to_s].to_i*data[l1.to_s][c3.to_s].to_i*data[l1.to_s][c4.to_s].to_i
+  sumsArray.push(hsum)
+  lsum = data[l1.to_s][c4.to_s].to_i*data[l2.to_s][c3.to_s].to_i*data[l3.to_s][c2.to_s].to_i*data[l4.to_s][c1.to_s].to_i
+  sumsArray.push(lsum)
+  rsum = data[l1.to_s][c1.to_s].to_i*data[l2.to_s][c2.to_s].to_i*data[l3.to_s][c3.to_s].to_i*data[l4.to_s][c4.to_s].to_i
+  sumsArray.push(rsum)
+  if c4 == 20
+    l1 += 1
+    l2 += 1
+    l3 += 1
+    l4 += 1
+    c1 = 1
+    c2 = 2
+    c3 = 3
+    c4 = 4
+  end
+  c1 += 1
+  c2 += 1
+  c3 += 1
+  c4 += 1
 end
 
 puts sumsArray.max
