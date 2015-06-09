@@ -6,14 +6,14 @@ last = 1
 current = 2
 
 results = [2]
-  while current < 4000000
-    x = current + last
-    if x % 2 == 0
-    	results.push(x)
-    end
-    last = current
-    current = x
+while current < 4000000
+  x = current + last
+  if x % 2 == 0
+  	results.push(x)
   end
+  last = current
+  current = x
+end
 
 total = results.inject(:+)
 puts total
