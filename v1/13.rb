@@ -213,6 +213,8 @@ end
 
 dataArr = counter.to_s.chars.map(&:to_i)
 
+dataArr = dataArr.reverse
+
 outArr = []
 out = ""
 
@@ -224,4 +226,5 @@ for i in outArr
   out.concat(i.to_s)
 end
 
+puts dataArr.reverse
 puts out
