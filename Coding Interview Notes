@@ -1,0 +1,97 @@
+find the items in arr that sum to int
+
+arr = [1,2,3,4,5]
+arr = [1,2,3,4,5] 
+
+int = 10
+
+def thingy(arr, int)
+	rp = 0 
+	lp = arr.length
+	while lp <= rp
+		if arr[rp] + arr[lp] < int
+				lp += 1
+		elsif arr[rp] + arr[lp] > int
+			rp += 1
+		else 
+			puts arr[rp], arr[lp]
+end
+
+def thingy(arr, int)
+	a_ha  = {}
+	x = int - n 
+	arr.each do |n|
+		if a_ha[x]
+			puts n, x
+		else
+			a_ha[x] = n
+end
+
+def thingy(arr, int)
+	arr.each do |n|
+		x = int - n 
+		if arr.include?(x)
+			puts x, n
+		end
+	end
+end
+
+def thingy(arr, int)
+	arr.each do |n|
+		arr.each do |x|
+			if n + x = int
+			 	puts n, x
+				return
+			end
+		end
+	end
+end
+
+
+# There's a sticker vending machine that prints out stickers with the full word "WP Engine" on them.
+# You will need to write a function that accepts an argument, a word, to determine how many stickers will need to be purchased in order to spell that word (not case sensitive).
+# The letters from the sticker can be re-arranged in any particular order.
+# You can think of this as physically cutting out each of the letters and using them to spell the word.
+# Examples: (WINNING {2}, PINGING {2}, WWW {3}, and NINE {1} for example words)
+
+def how_many_stickers(word)
+    c_ha = {}
+    c_ar = word.split(//)
+    sticker_a = "wp engine".split(//)
+    sticker_a.each do |s| # create a hash with wp engin as the keys
+        c_ha[s] = 0
+    end
+    c_ar.each do |c| #count how many times each character in the string matches the hash values(wpengine)
+        c_ha[c] += 1
+    end
+    #puts c_ha # how many times each character appears in 
+    
+    s_ha = {}
+    sticker_a.each do |x|
+        if s_ha.has_key?(x)
+            s_ha[x] += 1
+        else 
+            s_ha[x] = 1
+        end
+    end
+    #puts s_ha
+    results = []
+    s_ha.each do |k, v|
+        results.push(c_ha[k] / s_ha[k])
+    end
+    puts results.max
+    
+    
+end
+
+puts "Expects 2 as the result for 'winning': "
+how_many_stickers('winning')
+
+puts "Expects 2 as the result for 'pinging': "
+how_many_stickers('pinging')
+
+puts "Expects 3 as the result for 'www': "
+how_many_stickers('www')
+
+puts "Expects 1 as the result for 'nine': "
+how_many_stickers('nine')
