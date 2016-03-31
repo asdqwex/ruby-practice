@@ -95,3 +95,57 @@ how_many_stickers('www')
 
 puts "Expects 1 as the result for 'nine': "
 how_many_stickers('nine')
+
+#!/usr/bin/env ruby
+# Given the following csv file:
+# 
+# "first column","1030090","randomstr"
+# "first col","1009007","groupme"
+# "first 09","109600","randomstr"
+# "2730932","3020090,"groupme"
+# "first","1009001","groupme"
+# "first 0009","4090080","randomstr"
+# 
+# 1) Only in the 2nd column, replace all occurrences of the substring "09" with "10". Output:
+# 
+# "first column","1030100","randomstr"
+# "first col","1010007","groupme"
+# "first 09","110600","randomstr"
+# "2730932","3020100,"groupme"
+# "first","1010001","groupme"
+# "first 0009","4100080","randomstr"
+
+ out_file = open('data_out.csv', 'w')
+ 
+ File.open('data.csv').each do |line|
+ 	parts = line.split(',')
+ 	part = parts[1].to_s
+ 	part = part.gsub('09', '10')
+ 	parts[1] = part
+ 	out_file.puts(parts.join(','))
+ end
+
+# 3) Group the sum of the second column by the values of the third column
+# "randomstr", 5240780
+# "groupme", 5040108
+
+sum_hash = {}
+
+File.open('data.csv').each do |line|
+	parts = line.split(',')
+	part = parts[2].to_s.delete('"')
+	part = part.delete("\n")
+	if sum_hash.has_key?(part)
+		to_add = parts[1].to_s.delete('"')
+		sum_hash[part] = sum_hash[part].to_i + to_add.to_i
+	else
+		init_value = parts[1].to_s.delete('"')
+		init_value.delete("\n")
+		sum_hash[part] = init_value
+	end
+end
+
+puts sum_hash
+
+
+
