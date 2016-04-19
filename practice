@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+# Given the following csv file:
+# 
+# "first column","1030090","randomstr"
+# "first col","1009007","groupme"
+# "first 09","109600","randomstr"
+# "2730932","3020090,"groupme"
+# "first","1009001","groupme"
+# "first 0009","4090080","randomstr"
+# 
+# 1) Only in the 2nd column, replace all occurrences of the substring "09" with "10". Output:
+# 
+# "first column","1030100","randomstr"
+# "first col","1010007","groupme"
+# "first 09","110600","randomstr"
+# "2730932","3020100,"groupme"
+# "first","1010001","groupme"
+# "first 0009","4100080","randomstr"
+
+out_file = open('data.out', 'w')
+
+File.open('data.in').each do |line|
+	parts = line.split(',')
+	parts[1] = parts[1].to_s.tr('09', '10')
+	out_file.puts(parts.join(','))
+end
+
+# 3) Group the sum of the second column by the values of the third column
+# "randomstr", 5240780
+# "groupme", 5040108
+
+data = {}
+
+File.open('data.in').each do |line|
+	parts = line.tr('"', '').split(',')
+	puts parts
+	if data.key?(parts[1])
+		data[parts[2]] = data[parts[2]] + parts[1]
+	else
+		data[parts[2]] = parts[1]
+	end
+end
+
+puts data
