@@ -33,7 +33,6 @@ data = {}
 
 File.open('data.in').each do |line|
 	parts = line.tr('"', '').split(',')
-	puts parts
 	if data.key?(parts[1])
 		data[parts[2]] = data[parts[2]] + parts[1]
 	else
