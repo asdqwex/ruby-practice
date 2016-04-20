@@ -5,5 +5,5 @@
 54.80.70.27 - 123 - [19/Apr/2016:02:13:29 +0000] "HEAD / HTTP/1.1" 200 0 "-" "Cloud mapping experiment. Contact research@pdrlabs.net"
 54.80.70.27 - 123 - [19/Apr/2016:02:13:29 +0000] "GET /clientaccesspolicy.xml HTTP/1.1" 404 177 "-" "Cloud mapping experiment. Contact research@pdrlabs.net"
 202.112.51.96 - 456j7 - [19/Apr/2016:03:52:27 +0000] "GET / HTTP/1.1" 200 612 "-" "-" 
-107.184.104.52 - - [19/Apr/2016:05:26:58 +0000] "GET / HTTP/1.1" 200 612 "-" "-"
+107.184.104.52 - - [19/Apr/2016:05:26:58 +0000] / HTTP/1.1" 200 612 "-" "-"
 94.250.254.59 - g4r51 - [19/Apr/2016:19:10:57 +0000] "GET /w00tw00t.at.ISC.SANS.DFind:) HTTP/1.1" 400 181 "-" "-"
